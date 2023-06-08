@@ -6,7 +6,7 @@ import { selectTransactions } from '../features/transactions/transactionsSlice';
 
 
 export default function Budget({budget}) {
-    const useDispatch = useDispatch();
+    const dispatch = useDispatch();
     const [amount, setAmount] = useState(budget.amount);
 
     const transactions = useSelector(selectTransactions);
@@ -30,16 +30,17 @@ export default function Budget({budget}) {
         return parseFloat(amount) > 0 ? 'positive' : 'negative';
     };
 
-    const remainigFunds = Number.parseFloat(budget.amount - calculateTotalExpenses()).toFixed(2);
+    const remainingFunds = Number.parseFloat(budget.amount - calculateTotalExpenses()).toFixed(2);
 
-    const fundsRemainingClassName = getFundsRemainingClassName(remainigFunds);
+    const fundsRemainingClassName = getFundsRemainingClassName(remainingFunds);
 
 
 
 
     return (
         <li className='budget-container'>
-            <div className='category-level'>Category</div>{''} {/* need to undestand this part */}.
+            <div className='category-level'>Category
+            </div>{''} {/* need to undestand this part */}.
                 <div className='category-wrapper'>
                     <h3 className='category-value'>{budget.category}</h3>
                     <form onSubmit={handleEdit} className='budget-form'>
@@ -54,7 +55,7 @@ export default function Budget({budget}) {
                     </form>
                 </div>
                 <h4 className={`remaining-funds ${getFundsRemainingClassName}`}>
-                    Funds Remainig: {remainigFunds}
+                    Funds Remaining: {remainingFunds}
                 </h4>
 
         </li>

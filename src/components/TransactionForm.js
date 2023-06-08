@@ -31,7 +31,7 @@ export default function TransactionForm({ categories }) {
     return(
         <section className='new-transacation-section'>
             <h2>New Transaction</h2>
-            <form onSubmit={handleSumit}>
+            <form onSubmit={handleSubmit}>
                 <div className='form-wrapper'>
                     <div>
                         <label htmlFor='category'>Category</label>
