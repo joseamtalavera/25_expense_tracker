@@ -32,7 +32,7 @@ export default function Budget({budget}) {
 
     const remainingFunds = Number.parseFloat(budget.amount - calculateTotalExpenses()).toFixed(2);
 
-    const fundsRemainingClassName = getFundsRemainingClassName(remainingFunds);
+    //const fundsRemainingClassName = getFundsRemainingClassName(remainingFunds);
 
 
 
